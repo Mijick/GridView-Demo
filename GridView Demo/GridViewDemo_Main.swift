@@ -1,5 +1,5 @@
 //
-//  GridView_DemoApp.swift of GridView Demo
+//  GridView_Main.swift of GridView Demo
 //
 //  Created by Tomasz Kurylik
 //    - Twitter: https://twitter.com/tkurylik
@@ -11,11 +11,8 @@
 
 import SwiftUI
 
-@main
-struct GridView_DemoApp: App {
+@main struct GridViewDemo_Main: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+        WindowGroup(content: ContentView.init)
     }
 }

@@ -10,16 +10,20 @@
 
 
 import SwiftUI
+import MijickGridView
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        GridView(0..<12, id: \.self) { index in
+            Text("Hello kurwa \(index)")
+                .padding(.vertical, 28)
+                .frame(maxWidth: .infinity)
+                .background(Color.blue)
+                .columns(2)
+
+        } configBuilder: { config in
+            config.columns(3)
         }
-        .padding()
     }
 }
 
