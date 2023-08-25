@@ -23,7 +23,6 @@ struct MainView: View {
             createTabBar()
         }
         .padding(.top, UIScreen.safeArea.top)
-        .padding(.bottom, UIScreen.safeArea.bottom)
         .background(Color.backgroundPrimary)
         .ignoresSafeArea()
         .preferredColorScheme(.dark)

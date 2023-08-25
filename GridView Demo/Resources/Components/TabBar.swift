@@ -19,7 +19,11 @@ struct TabBar: View {
         HStack(spacing: 0) {
             ForEach(Tab.allCases, id: \.self, content: createButton)
         }
+        .padding(.top, 12)
+        .padding(.bottom, UIScreen.safeArea.bottom)
         .padding(.horizontal, 24)
+        .ignoresSafeArea()
+        .background(createBackground())
     }
 }
 private extension TabBar {
@@ -32,6 +36,12 @@ private extension TabBar {
             .foregroundColor(tab == activeTab ? .onBackgroundPrimary : .onBackgroundSecondary)
         }
         .frame(maxWidth: .infinity)
+    }
+    func createBackground() -> some View {
+        LinearGradient(stops: [
+            .init(color: .backgroundPrimary.opacity(0.72), location: 0),
+            .init(color: .backgroundPrimary, location: 0.3)
+        ], startPoint: .top, endPoint: .bottom)
     }
 }
 private extension TabBar {
