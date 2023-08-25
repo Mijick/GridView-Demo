@@ -15,7 +15,7 @@
 		6D481D6D2A9927FF00CEE3AD /* Color++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D481D6C2A9927FF00CEE3AD /* Color++.swift */; };
 		6D481D712A9929DC00CEE3AD /* UIScreen++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D481D702A9929DC00CEE3AD /* UIScreen++.swift */; };
 		6D6DEF282A92C93D00C42C15 /* GridViewDemo_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DEF272A92C93D00C42C15 /* GridViewDemo_Main.swift */; };
-		6D6DEF2A2A92C93D00C42C15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DEF292A92C93D00C42C15 /* ContentView.swift */; };
+		6D6DEF2A2A92C93D00C42C15 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DEF292A92C93D00C42C15 /* MainView.swift */; };
 		6D6DEF2C2A92C94100C42C15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DEF2B2A92C94100C42C15 /* Assets.xcassets */; };
 		6D6DEF3A2A92CA6400C42C15 /* MijickGridView in Frameworks */ = {isa = PBXBuildFile; productRef = 6D6DEF392A92CA6400C42C15 /* MijickGridView */; };
 		6DB032142A99469100BB4584 /* Spacer++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB032132A99469100BB4584 /* Spacer++.swift */; };
@@ -35,7 +35,7 @@
 		6D481D702A9929DC00CEE3AD /* UIScreen++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen++.swift"; sourceTree = "<group>"; };
 		6D6DEF242A92C93D00C42C15 /* GridView Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GridView Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6DEF272A92C93D00C42C15 /* GridViewDemo_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewDemo_Main.swift; sourceTree = "<group>"; };
-		6D6DEF292A92C93D00C42C15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6D6DEF292A92C93D00C42C15 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6D6DEF2B2A92C94100C42C15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D6DEF3B2A92CA7F00C42C15 /* GridView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GridView; path = ../GridView; sourceTree = "<group>"; };
 		6DB032132A99469100BB4584 /* Spacer++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacer++.swift"; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		6D6DEF352A92C9B900C42C15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6D6DEF292A92C93D00C42C15 /* ContentView.swift */,
+				6D6DEF292A92C93D00C42C15 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6DEF2A2A92C93D00C42C15 /* ContentView.swift in Sources */,
+				6D6DEF2A2A92C93D00C42C15 /* MainView.swift in Sources */,
 				6D6DEF282A92C93D00C42C15 /* GridViewDemo_Main.swift in Sources */,
 				6DCC91382A94227C00AB85A8 /* NavigationBar.swift in Sources */,
 				6D481D712A9929DC00CEE3AD /* UIScreen++.swift in Sources */,

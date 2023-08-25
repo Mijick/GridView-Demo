@@ -13,6 +13,6 @@ import SwiftUI
 
 @main struct GridViewDemo_Main: App {
     var body: some Scene {
-        WindowGroup(content: ContentView.init)
+        WindowGroup(content: MainView.init)
     }
 }
