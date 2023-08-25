@@ -18,15 +18,18 @@ struct ContentView: View {
             createNavigationBar()
             createContentView()
         }
+        .background(Color.backgroundPrimary)
+        .ignoresSafeArea()
+        .preferredColorScheme(.dark)
     }
 }
 
 private extension ContentView {
     func createNavigationBar() -> some View {
-        EmptyView()
+        NavigationBar()
     }
     func createContentView() -> some View {
-        EmptyView()
+        Spacer()
     }
     func createTabBar() -> some View {
         EmptyView()

@@ -14,13 +14,11 @@ import SwiftUI
 extension UIScreen {
     static let width: CGFloat = UIScreen.main.bounds.size.width
     static let safeArea: UIEdgeInsets = {
-        UIApplication.shared.connectedScenes
-            .filter({$0.activationState == .foregroundActive})
-            .map({$0 as? UIWindowScene})
-            .compactMap({$0})
-            .first?.windows
-            .filter({$0.isKeyWindow})
-            .first?
+        UIApplication.shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap(\.windows)
+            .first(where: \.isKeyWindow)?
             .safeAreaInsets ?? .zero
     }()
     static let margin: CGFloat = 16
