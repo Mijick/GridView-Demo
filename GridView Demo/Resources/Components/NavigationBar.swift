@@ -16,7 +16,12 @@ struct NavigationBar: View {
         HStack(spacing: 0) {
             createText()
             Spacer()
+            createButtons()
         }
+        .padding(.top, 24)
+        .padding(.bottom, 12)
+        .padding(.horizontal, .margin)
+        .frame(maxWidth: .infinity)
     }
 }
 private extension NavigationBar {
@@ -34,10 +39,10 @@ private extension NavigationBar {
 }
 private extension NavigationBar {
     func createNotificationsButton() -> some View {
-
+        NavigationBarButton(icon: "icon.notifications", action: onSettingsButtonTap)
     }
     func createSettingsButton() -> some View {
-
+        NavigationBarButton(icon: "icon.settings", action: onSettingsButtonTap)
     }
 }
 
@@ -47,5 +52,22 @@ private extension NavigationBar {
     }
     func onSettingsButtonTap() {
         
+    }
+}
+
+
+// MARK: - Button
+fileprivate struct NavigationBarButton: View {
+    let icon: String
+    let action: () -> ()
+
+
+    var body: some View { 
+        Button(action: action) {
+            Image(icon)
+                .resizable()
+                .frame(28)
+                .foregroundColor(.onBackgroundPrimary)
+        }
     }
 }
