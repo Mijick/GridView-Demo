@@ -48,9 +48,9 @@ private extension MainView {
             VStack(spacing: 0) {
                 createContentTagsView()
                 Spacer.height(24)
-                createContentSquareImagesView()
+                createContentSquareItemsView()
                 Spacer.height(44)
-                createContentImagesView()
+                createContentRegularItemsView()
             }
             .padding(.top, 16)
             .padding(.bottom, 80)
@@ -62,19 +62,37 @@ private extension MainView {
     func createContentTagsView() -> some View {
         EmptyView()
     }
-    func createContentSquareImagesView() -> some View {
-        GridView(squareItems, id: \.image, content: SquareItem.init) { config in
+    func createContentSquareItemsView() -> some View {
+        GridView(squareItems, id: \.image, content: createSquareItem) { config in
             config
                 .columns(4)
                 .horizontalSpacing(16)
         }
     }
-    func createContentImagesView() -> some View {
-        GridView(regularItems, id: \.image, content: RegularItem.init) { config in
+    func createContentRegularItemsView() -> some View {
+        GridView(regularItems, id: \.image, content: createRegularItem) { config in
             config
                 .columns(2)
                 .verticalSpacing(24)
                 .horizontalSpacing(16)
+                .insertionPolicy(.fill)
         }
+    }
+}
+private extension MainView {
+    func createSquareItem(_ item: MockData.SquareItems) -> some View {
+        SquareItem(item: item)
+    }
+    func createRegularItem(_ item: MockData.RegularItems) -> some View {
+        RegularItem(item: item).columns(getRegularItemColumns(item))
+    }
+}
+
+private extension MainView {
+    func getRegularItemColumns(_ item: MockData.RegularItems) -> Int {
+        let itemIndexString = item.image.components(separatedBy: ".").last ?? ""
+
+        let itemIndex = Int(itemIndexString) ?? 0
+        return itemIndex.isMultiple(of: 2) ? 2 : 1
     }
 }
