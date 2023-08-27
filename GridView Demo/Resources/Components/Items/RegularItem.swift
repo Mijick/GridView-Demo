@@ -16,21 +16,31 @@ struct RegularItem: View {
 
 
     var body: some View {
-        EmptyView()
+        VStack(alignment: .trailing, spacing: 8) {
+            createImage()
+            createMoreButton()
+        }
     }
 }
 private extension RegularItem {
-
+    func createImage() -> some View {
+        Image(item.image)
+            .resizable()
+            .scaledToFit()
+            .mask(RoundedRectangle(cornerRadius: 12))
+    }
+    func createMoreButton() -> some View {
+        Button(action: onMoreButtonTap) {
+            Image("icon.more")
+                .resizable()
+                .frame(24)
+                .foregroundColor(.onBackgroundPrimary)
+        }
+    }
 }
-private extension RegularItem {
 
-}
 private extension RegularItem {
+    func onMoreButtonTap() {
 
-}
-private extension RegularItem {
-
-}
-private extension RegularItem {
-
+    }
 }
