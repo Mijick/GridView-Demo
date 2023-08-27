@@ -45,7 +45,7 @@ private extension MainView {
     }
     func createContentView() -> some View {
         ScrollView(showsIndicators: false) { 
-            VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
                 createContentTagsView()
                 Spacer.height(24)
                 createContentSquareItemsView()
@@ -60,7 +60,10 @@ private extension MainView {
 }
 private extension MainView {
     func createContentTagsView() -> some View {
-        EmptyView()
+        HStack(spacing: 6) {
+            createTagsCloseButton()
+            createTagsItem()
+        }
     }
     func createContentSquareItemsView() -> some View {
         GridView(squareItems, id: \.image, content: createSquareItem) { config in
@@ -80,11 +83,23 @@ private extension MainView {
     }
 }
 private extension MainView {
+    func createTagsCloseButton() -> some View {
+        CircularButton(icon: "icon.close", action: onTagsCloseButtonTap)
+    }
+    func createTagsItem() -> some View {
+        TagItem(text: "Illustrations & Images")
+    }
     func createSquareItem(_ item: MockData.SquareItems) -> some View {
         SquareItem(item: item)
     }
     func createRegularItem(_ item: MockData.RegularItems) -> some View {
         RegularItem(item: item).columns(getRegularItemColumns(item))
+    }
+}
+
+private extension MainView {
+    func onTagsCloseButtonTap() {
+
     }
 }
 
